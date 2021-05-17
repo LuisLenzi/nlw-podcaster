@@ -2,7 +2,7 @@ This is a [Podcaster] project bootstrapped with [`create-next-app`](https://gith
 
 ## Getting Started
 
-First, run the development server:
+Uniscast - Projeto Interdisciplinar de Curso
 
 ```bash
 npm run dev
