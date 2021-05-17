@@ -10,4 +10,4 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [https://podcaster-git-master-luislenzi.vercel.app/](https://podcaster-git-master-luislenzi.vercel.app/) with your browser to see the result.
