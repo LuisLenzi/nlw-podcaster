@@ -7,7 +7,7 @@ export default function Home(props) {
   )
 }
 
-export async function getStaticProps() {
+/* export async function getStaticProps() {
   const response = await fetch('http://localhost:3333/episodes');
   const data = await response.json();
 
@@ -17,4 +17,4 @@ export async function getStaticProps() {
     },
     revalidate: 60 * 60 * 8,
   }
-}
+} */
