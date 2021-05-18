@@ -1,0 +1,46 @@
+.header {
+  background: var(--header-gradient);
+  height: 5.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+
+  .logoHeader {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .logoContent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+
+      h2 {
+        font-weight: 500;
+      }
+    }
+
+    .headerMessage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 2rem;
+      border-left: 1px solid var(--white-solid);
+      height: 1.5rem;
+
+      p {
+        font-size: 75%;
+        color: var(--white-solid);
+      }
+    }
+  }
+
+  p {
+    font-size: 70%;
+    font-weight: 300;
+    color: var(--white-solid);
+  }
+}
