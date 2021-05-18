@@ -4,7 +4,7 @@
     transform: scaleY(1);
   }
   25% {
-    transform: scaleY(2);
+    transform: scaleY(1.5);
   }
 }
 
@@ -18,6 +18,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
 
   header {
     display: flex;
@@ -38,7 +39,6 @@
     align-items: center;
     justify-content: center;
     gap: 0.15rem;
-    width: 100%;
 
     span {
       display: inline-block;
@@ -105,7 +105,7 @@
 .emptyPlayer {
   background: var(--podcast-image-selected-box-gradient);
   width: 100%;
-  height: 20rem;
+  height: 100%;
   border-radius: 1.5rem;
   padding: 4rem;
   text-align: center;
@@ -148,7 +148,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   gap: 1.5rem;
 
   button {
