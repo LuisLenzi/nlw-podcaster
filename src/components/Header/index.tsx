@@ -18,7 +18,7 @@ export function Header() {
           <p>O melhor para você ouvir, sempre</p>
         </div>
       </div>
-      <p>{currentDate}</p>
+      <p className={styles.currentDate}>{currentDate}</p>
     </header>
   );
 }

@@ -32,13 +32,16 @@
       height: 1.5rem;
 
       p {
+        font-weight: 300;
         font-size: 75%;
         color: var(--white-solid);
       }
     }
   }
 
-  p {
+  .currentDate {
+    position: fixed;
+    right: 0;
     font-size: 70%;
     font-weight: 300;
     color: var(--white-solid);

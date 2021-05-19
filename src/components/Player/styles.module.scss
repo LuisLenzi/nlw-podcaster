@@ -19,6 +19,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  position: fixed;
+  right: 0;
 
   header {
     display: flex;

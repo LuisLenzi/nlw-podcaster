@@ -40,13 +40,13 @@ export function Player() {
             <img src="assets/icons/shuffle-icon.svg" alt="Embaralhar" />
           </button>
           <button type="button">
-            <img src="assets/icons/play-previous-icon.svg" alt="Tocar anterior" />
+            <img src="assets/icons/play-previous-icon.svg" alt="Trocar para anterior" />
           </button>
           <button type="button" className={styles.playButton}>
-            <img src="assets/icons/play-button-icon.svg" alt="Tocar" />
+            <img src="assets/icons/play-button-icon.svg" alt="Startar" />
           </button>
           <button type="button">
-            <img src="assets/icons/play-next-icon.svg" alt="Tocar próxima" />
+            <img src="assets/icons/play-next-icon.svg" alt="Trocar para próxima" />
           </button>
           <button type="button">
             <img src="assets/icons/repeat-icon.svg" alt="Repetir" />

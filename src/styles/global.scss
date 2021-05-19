@@ -2,22 +2,42 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  ::-webkit-scrollbar {
+    width: 7.5px;
+    height: 7.5px;
+    border-radius: 1rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--orange-solid);
+    border-radius: 1rem;
+    &:hover {
+      background: var(--podcast-option-play-button-gradient);
+    }
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--gray-solid);
+  }
 }
 
 :root {
   //Solid Colors
-  --orange-solid: #FF6400;
-  --white-solid: #FFFFFF;
+  --orange-solid: #ff6400;
+  --white-solid: #ffffff;
   --black-solid: #000000;
-  --gray-solid: #545454;
+  --gray-solid: #1c1c1c;
   //Gradient Colors
   --background-gradient: linear-gradient(90.08deg, #622600 -291.94%, #09090c 70.4%);
   --header-gradient: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.15) 100%);
-  --podcast-option-play-button-gradient: linear-gradient(143.2deg, #FF6400 -45.68%, rgba(255, 100, 0, 0) 96.25%);
-  --podcast-option-background-gradient: linear-gradient(272.88deg, #0F0E0D 49.41%, rgba(0, 0, 0, 0) 107.52%);
-  --podcast-image-selected-box-gradient: linear-gradient(144.52deg, rgba(18, 18, 18, 0.8) -0.7%, rgba(0, 0, 0, 0) 125.23%);
+  --podcast-option-play-button-gradient: linear-gradient(143.2deg, #ff6400 -45.68%, rgba(255, 100, 0, 0) 96.25%);
+  --podcast-option-background-gradient: linear-gradient(272.88deg, rgba(16, 16, 16, 0.05) -13.29%, #ff5c00 107.52%);
+  --podcast-image-selected-box-gradient: linear-gradient(
+    144.52deg,
+    rgba(18, 18, 18, 0.8) -0.7%,
+    rgba(0, 0, 0, 0) 125.23%
+  );
   --pause-and-play-button-gradient: linear-gradient(130.5deg, #000000 -6.74%, rgba(0, 0, 0, 0) 133.18%);
-  --player-mobile-gradient: linear-gradient(180deg, rgba(255, 100, 0, 0) 0%, #FF6400 147.76%);
+  --player-mobile-gradient: linear-gradient(180deg, rgba(255, 100, 0, 0) 0%, #ff6400 147.76%);
 }
 
 @media (max-width: 1080px) {
@@ -32,17 +52,24 @@
   }
 }
 
-
 body {
   background: var(--background-gradient);
 }
 
-body, input, textarea, button {
+body,
+input,
+textarea,
+button {
   font: 500 1rem Poppins, sans-serif;
   color: var(--white-solid);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
   font-family: Poppins, sans-serif;
   color: var(--white-solid);
