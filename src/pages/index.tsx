@@ -44,16 +44,13 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                     <a href="">{episode.title}</a>
                     <div className={styles.textBox}>
                       <p>{episode.members}</p>
-                      <div>
+                      <div className={styles.textContent}>
                         <span>{episode.publishedAt}</span>
-                        <span>{episode.durationAsString}</span>
+                        <span className="duration">{episode.durationAsString}</span>
                       </div>
                     </div>
                   </div>
                   <div className={styles.buttons}>
-                    <button type="button" className={styles.moreDescription}>
-                      <p>Saiba +</p>
-                    </button>
                     <button type="button">
                       <img src="assets/icons/play-button-icon.svg" alt="Startar episódio" />
                     </button>
@@ -65,7 +62,40 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
         </ul>
       </section>
       <section className={styles.allEpisodes}>
-
+        <h2>Todos os Podcasts</h2>
+        <ul>
+          {
+            allEpisodes.map(episode => {
+              return (
+                <li key={episode.id}>
+                  <Image
+                    width={75}
+                    height={75}
+                    src={episode.thumbnail}
+                    alt={episode.title}
+                    objectFit="cover"
+                    className={styles.image}
+                  />
+                  <div className={styles.episodeDetails}>
+                    <a href="">{episode.title}</a>
+                    <div className={styles.textBox}>
+                      <p>{episode.members}</p>
+                      <div className={styles.textContent}>
+                        <span>{episode.publishedAt}</span>
+                        <span className="duration">{episode.durationAsString}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.buttons}>
+                    <button type="button">
+                      <img src="assets/icons/play-button-icon.svg" alt="Startar episódio" />
+                    </button>
+                  </div>
+                </li>
+              )
+            })
+          }
+        </ul>
       </section>
     </div>
   )

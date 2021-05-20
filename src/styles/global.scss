@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url("/assets/cursor/default.svg"), auto;
 
   ::-webkit-scrollbar {
     width: 7.5px;
@@ -9,10 +10,10 @@
     border-radius: 1rem;
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--orange-solid);
+    background: var(--podcast-option-play-button-gradient);
     border-radius: 1rem;
     &:hover {
-      background: var(--podcast-option-play-button-gradient);
+      background: var(--orange-solid);
     }
   }
   ::-webkit-scrollbar-track {
@@ -84,7 +85,7 @@ h2 {
 }
 
 button {
-  cursor: pointer;
+  cursor: url("/assets/cursor/pointer.svg"), auto;
   outline: none;
   border: none;
 }
