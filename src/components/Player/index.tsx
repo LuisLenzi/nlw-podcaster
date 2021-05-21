@@ -3,7 +3,7 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { useState } from 'react';
 
 export function Player() {
-  const [showPlayer, setShowPlayer] = useState(true);
+  const [showPlayer, setShowPlayer] = useState(false);
 
   function handleHidePlayer() {
     showPlayer ? setShowPlayer(false) : setShowPlayer(true);
