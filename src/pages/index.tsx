@@ -30,7 +30,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   useEffect(() => {
     setTimeout(() => {
       setShowLoading(false);
-    }, 2500);
+    }, 3000);
   }, [])
 
   return (
@@ -44,8 +44,8 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                 return (
                   <li key={episode.id}>
                     <Image
-                      width={200}
-                      height={200}
+                      width={100}
+                      height={100}
                       src={episode.thumbnail}
                       alt={episode.title}
                       objectFit="cover"

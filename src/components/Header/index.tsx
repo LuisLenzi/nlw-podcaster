@@ -11,7 +11,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.logoHeader}>
         <div className={styles.logoContent}>
-          <img src="assets/icons/logo.svg" alt="Uniscast" />
+          <img src="/assets/icons/logo.svg" alt="Uniscast" />
           <h2>Uniscast</h2>
         </div>
         <div className={styles.headerMessage}>

@@ -20,8 +20,8 @@
   overflow-y: auto;
 
   h2 {
-    margin-top: 2rem;
-    margin-bottom: 1.25rem;
+    margin-top: 2.75rem;
+    margin-bottom: 1rem;
     font-weight: 500;
     font-size: 135%;
   }
@@ -29,17 +29,17 @@
 
 .latestEpisodes {
   ul {
-    height: 12.5rem;
+    height: 13.5rem;
     overflow-x: auto;
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: calc(100% - 21.5rem);
+    width: 100%;
 
     li {
       cursor: url("/assets/cursor/pointer.svg"), auto;
       background: var(--podcast-option-background-gradient);
-      padding: 1.5rem 2.5rem;
+      padding: 2.5rem 2.5rem;
       border-radius: 1.5rem;
       display: flex;
       align-items: center;
@@ -47,7 +47,6 @@
       gap: 1.5rem;
       transition: all 0.4s ease-out;
       opacity: 0.65;
-      margin-bottom: 0.5rem;
 
       .image {
         cursor: url("/assets/cursor/pointer.svg"), auto;
@@ -71,11 +70,11 @@
           display: flex;
           color: var(--white-solid);
           font-family: Poppins, sans-serif;
-          font-weight: 400;
+          font-weight: 500;
           text-decoration: none;
           text-overflow: ellipsis;
           line-height: 1.25rem;
-          font-size: 90%;
+          font-size: 110%;
         }
 
         .textBox {
@@ -95,7 +94,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             font-weight: 300;
-            font-size: 0.5rem;
+            font-size: 0.85rem;
             line-height: 1rem;
           }
 
@@ -103,7 +102,7 @@
             cursor: url("/assets/cursor/pointer.svg"), auto;
             span {
               cursor: url("/assets/cursor/pointer.svg"), auto;
-              font-size: 0.45rem;
+              font-size: 0.75rem;
               font-weight: 500;
 
               &:last-child {
@@ -162,7 +161,7 @@
 }
 
 .allEpisodes {
-  width: calc(100% - 23.5rem);
+  width: 100%;
 
   h2 {
     font-size: 100%;
@@ -170,21 +169,20 @@
   }
 
   ul {
-    padding: 0.5rem 2rem 3rem 0;
+    padding: 1rem 0 3rem 0;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
-    gap: .75rem;
+    gap: 1.5rem;
     width: 100%;
 
     li {
       cursor: url("/assets/cursor/pointer.svg"), auto;
       background: var(--pause-and-play-button-gradient);
-      padding: 0rem 2rem;
+      padding: 3rem 3rem;
       border-radius: 1.5rem;
       display: flex;
       align-items: center;
-      height: 9rem;
       width: 100%;
       gap: 1.25rem;
       transition: all 0.4s ease-out;
@@ -192,15 +190,15 @@
 
       .image {
         cursor: url("/assets/cursor/pointer.svg"), auto;
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
         border-radius: 1rem;
         transition: all 0.4s ease;
       }
 
       .episodeDetails {
         cursor: url("/assets/cursor/pointer.svg"), auto;
-        width: 50%;
+        width: 25%;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
@@ -214,8 +212,8 @@
           font-family: Poppins, sans-serif;
           font-weight: 500;
           text-decoration: none;
-          line-height: 1rem;
-          font-size: 70%;
+          line-height: 1.5rem;
+          font-size: 100%;
         }
 
         .textBox {
@@ -235,7 +233,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             font-weight: 300;
-            font-size: 0.25rem;
+            font-size: 0.8rem;
             line-height: 1rem;
           }
 
@@ -243,7 +241,7 @@
             cursor: url("/assets/cursor/pointer.svg"), auto;
             span {
               cursor: url("/assets/cursor/pointer.svg"), auto;
-              font-size: 0.25rem;
+              font-size: 0.70rem;
               font-weight: 500;
 
               &:last-child {
@@ -265,16 +263,16 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 2.25rem;
-          height: 2.25rem;
+          width: 3rem;
+          height: 3rem;
           border-radius: 0.625rem;
           animation: pulse 1.5s infinite;
           transition: all 0.4s ease-in-out;
           padding: 1rem 1rem 1rem 1.15rem;
 
           img {
-            width: 10px;
-            height: 10px;
+            width: 15px;
+            height: 15px;
             cursor: url("/assets/cursor/pointer.svg"), auto;
           }
 
