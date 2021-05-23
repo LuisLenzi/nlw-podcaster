@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { Player } from '../components/Player';
 import styles from '../styles/app.module.scss';
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }) {
         <main>
           <Header />
           <Component {...pageProps} />
+          <Footer />
         </main>
         <Player />
       </div>

@@ -9,6 +9,7 @@
     "server": "json-server server.json -w -d -p 3333"
   },
   "dependencies": {
+    "@google-cloud/storage": "^5.8.5",
     "@types/node": "^15.3.0",
     "@types/react": "^17.0.5",
     "axios": "^0.21.1",

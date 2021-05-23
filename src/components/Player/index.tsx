@@ -16,7 +16,7 @@ export function Player() {
           <div className={styles.player} >
             <header>
               <div className={styles.playing}>
-                <img src="assets/icons/headphone-icon.svg" alt="Tocando agora" />
+                <img src="/assets/icons/headphone-icon.svg" alt="Tocando agora" />
                 <p>Tocando agora</p>
               </div>
             </header>
@@ -50,19 +50,19 @@ export function Player() {
               </button>
               <div className={styles.buttons}>
                 <button type="button">
-                  <img src="assets/icons/shuffle-icon.svg" alt="Embaralhar" />
+                  <img src="/assets/icons/shuffle-icon.svg" alt="Embaralhar" />
                 </button>
                 <button type="button">
-                  <img src="assets/icons/play-previous-icon.svg" alt="Trocar para anterior" />
+                  <img src="/assets/icons/play-previous-icon.svg" alt="Trocar para anterior" />
                 </button>
                 <button type="button" className={styles.playButton}>
-                  <img src="assets/icons/play-button-icon.svg" alt="Startar" />
+                  <img src="/assets/icons/play-button-icon.svg" alt="Startar" />
                 </button>
                 <button type="button">
-                  <img src="assets/icons/play-next-icon.svg" alt="Trocar para próxima" />
+                  <img src="/assets/icons/play-next-icon.svg" alt="Trocar para próxima" />
                 </button>
                 <button type="button">
-                  <img src="assets/icons/repeat-icon.svg" alt="Repetir" />
+                  <img src="/assets/icons/repeat-icon.svg" alt="Repetir" />
                 </button>
               </div>
             </footer>

@@ -1,18 +1,18 @@
+import { useEffect, useState } from 'react';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
+import styles from './home.module.scss';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR'
 import api from '../services/api';
-import { convertDurationToTimeString } from '../utils/convertDurationToTimeString';
-import styles from './home.module.scss';
-import { useEffect, useState } from 'react';
 import { Loading } from '../components/Loading';
+import { convertDurationToTimeString } from '../utils/convertDurationToTimeString';
 
 type Episode = {
   id: string;
   title: string;
   thumbnail: string;
-  description: string;
   members: string;
   duration: number;
   durationAsString: string;
@@ -30,7 +30,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   useEffect(() => {
     setTimeout(() => {
       setShowLoading(false);
-    }, 3000);
+    }, 2500);
   }, [])
 
   return (
@@ -42,31 +42,33 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
             {
               latestEpisodes.map(episode => {
                 return (
-                  <li key={episode.id}>
-                    <Image
-                      width={100}
-                      height={100}
-                      src={episode.thumbnail}
-                      alt={episode.title}
-                      objectFit="cover"
-                      className={styles.image}
-                    />
-                    <div className={styles.episodeDetails}>
-                      <a href="">{episode.title}</a>
-                      <div className={styles.textBox}>
-                        <p>{episode.members}</p>
-                        <div className={styles.textContent}>
-                          <span>{episode.publishedAt}</span>
-                          <span className="duration">{episode.durationAsString}</span>
+                  <Link href={`/podcasts/${episode.id}`} key={episode.id}>
+                    <a>
+                      <Image
+                        width={100}
+                        height={100}
+                        src={episode.thumbnail}
+                        alt={episode.title}
+                        objectFit="cover"
+                        className={styles.image}
+                      />
+                      <div className={styles.episodeDetails}>
+                        <div>{episode.title}</div>
+                        <div className={styles.textBox}>
+                          <p>{episode.members}</p>
+                          <div className={styles.textContent}>
+                            <span>{episode.publishedAt}</span>
+                            <span className="duration">{episode.durationAsString}</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className={styles.buttons}>
-                      <button type="button">
-                        <img src="assets/icons/play-button-icon.svg" alt="Startar episódio" />
-                      </button>
-                    </div>
-                  </li>
+                      <div className={styles.buttons}>
+                        <button type="button">
+                          <img src="assets/icons/play-button-icon.svg" alt="Startar episódio" />
+                        </button>
+                      </div>
+                    </a>
+                  </Link>
                 )
               })
             }
@@ -78,31 +80,33 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
             {
               allEpisodes.map(episode => {
                 return (
-                  <li key={episode.id}>
-                    <Image
-                      width={75}
-                      height={75}
-                      src={episode.thumbnail}
-                      alt={episode.title}
-                      objectFit="cover"
-                      className={styles.image}
-                    />
-                    <div className={styles.episodeDetails}>
-                      <a href="">{episode.title}</a>
-                      <div className={styles.textBox}>
-                        <p>{episode.members}</p>
-                        <div className={styles.textContent}>
-                          <span>{episode.publishedAt}</span>
-                          <span className="duration">{episode.durationAsString}</span>
+                  <Link href={`/podcasts/${episode.id}`} key={episode.id}>
+                    <a>
+                      <Image
+                        width={75}
+                        height={75}
+                        src={episode.thumbnail}
+                        alt={episode.title}
+                        objectFit="cover"
+                        className={styles.image}
+                      />
+                      <div className={styles.episodeDetails}>
+                        <div>{episode.title}</div>
+                        <div className={styles.textBox}>
+                          <p>{episode.members}</p>
+                          <div className={styles.textContent}>
+                            <span>{episode.publishedAt}</span>
+                            <span className="duration">{episode.durationAsString}</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className={styles.buttons}>
-                      <button type="button">
-                        <img src="assets/icons/play-button-icon.svg" alt="Startar episódio" />
-                      </button>
-                    </div>
-                  </li>
+                      <div className={styles.buttons}>
+                        <button type="button">
+                          <img src="assets/icons/play-button-icon.svg" alt="Startar episódio" />
+                        </button>
+                      </div>
+                    </a>
+                  </Link>
                 )
               })
             }
@@ -123,10 +127,9 @@ export const getStaticProps: GetStaticProps = async () => {
       title: episode.title,
       thumbnail: episode.thumbnail,
       members: episode.members,
-      description: episode.description,
-      url: episode.file.url,
-      duration: Number(episode.file.duration),
-      durationAsString: convertDurationToTimeString(Number(episode.file.duration)),
+      url: episode.url,
+      duration: Number(episode.duration),
+      durationAsString: convertDurationToTimeString(Number(episode.duration)),
       publishedAt: format(parseISO(episode.published_at), 'EEEE, dd MMMM', {
         locale: ptBR
       }),
