@@ -8,6 +8,11 @@
     width: 7.5px;
     height: 7.5px;
     border-radius: 1rem;
+
+    @media (max-width: 768px) {
+      width: 5.5px;
+      height: 5.5px;
+    }
   }
   ::-webkit-scrollbar-thumb {
     background: var(--podcast-option-play-button-gradient);

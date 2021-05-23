@@ -27,6 +27,8 @@ type PodcastProps = {
 
 export default function Podcast({ episode }: PodcastProps) {
   const [showLoading, setShowLoading] = useState(true);
+  const [showPreviousPage, setShowPreviousPage] = useState('');
+  const [showNextPage, showSetNextPage] = useState('');
 
   useEffect(() => {
     setTimeout(() => {
@@ -38,18 +40,22 @@ export default function Podcast({ episode }: PodcastProps) {
     <>
       <div className={styles.podcast}>
         <div className={styles.thumbnailContainer}>
-          <button type="button">
-            <FaAngleLeft size={20} />
-          </button>
+          <Link href="/">
+            <button type="button">
+              <FaAngleLeft size={20} />
+            </button>
+          </Link>
           <Image
             width={800}
             height={225}
             src={episode.thumbnail}
             objectFit="cover"
           />
-          <button type="button">
-            <FaAngleRight size={20} />
-          </button>
+          <Link href="/">
+            <button type="button">
+              <FaAngleRight size={20} />
+            </button>
+          </Link>
         </div>
         <header>
           <h1>{episode.title}</h1>

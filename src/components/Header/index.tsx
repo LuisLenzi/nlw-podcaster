@@ -9,19 +9,27 @@ export function Header() {
   });
 
   return (
-    <header className={styles.header}>
-      <div className={styles.logoHeader}>
-        <Link href="/">
-          <a className={styles.logoContent}>
-            <img src="/assets/icons/logo.svg" alt="Uniscast" />
-            <h2>Uniscast</h2>
-          </a>
-        </Link>
-        <div className={styles.headerMessage}>
-          <p>O melhor para você ouvir, sempre</p>
+    <>
+      <header className={styles.header}>
+        <div className={styles.logoHeader}>
+          <Link href="/">
+            <a className={styles.logoContent}>
+              <img src="/assets/icons/logo.svg" alt="Uniscast" />
+              <h2>Uniscast</h2>
+            </a>
+          </Link>
+          <div className={styles.headerMessage}>
+            <p>O melhor para você ouvir, sempre</p>
+          </div>
+        </div>
+        <p className={styles.currentDate}>{currentDate}</p>
+      </header>
+      <div className={styles.mobileHeader}>
+        <div className={styles.mobileHeaderMessage}>
+          <p>O melhor para você ouvir,</p>
+          <p style={{ color: 'var(--orange-solid)' }}>sempre</p>
         </div>
       </div>
-      <p className={styles.currentDate}>{currentDate}</p>
-    </header>
+    </>
   );
 }

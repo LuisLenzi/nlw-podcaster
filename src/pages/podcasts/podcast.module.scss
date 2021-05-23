@@ -15,6 +15,7 @@
     justify-content: center;
 
     button {
+      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -22,6 +23,19 @@
       padding: 1rem;
       border-radius: 0.5rem;
       background: var(--black-solid);
+      transition: all 0.4s ease-in-out;
+
+      svg {
+        cursor: url("/assets/cursor/pointer.svg"), auto;
+        path {
+          cursor: url("/assets/cursor/pointer.svg"), auto;
+        }
+      }
+
+      &:hover {
+        background: var(--gray-solid);
+        transform: scale(1.1);
+      }
     }
 
     img {
@@ -83,7 +97,13 @@
     padding: 2rem 3rem;
     background: var(--black-solid);
     border-radius: 1rem;
-    gap: 1rem;
+    gap: 3rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
 
     button {
       padding: 1.75rem 3rem;

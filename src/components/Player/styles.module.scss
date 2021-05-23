@@ -34,6 +34,7 @@
 }
 
 .player {
+  z-index: 1;
   animation: appearFromRight 0.35s linear;
   background: var(--orange-solid);
   color: var(--white-solid);
@@ -47,6 +48,10 @@
   gap: 1.5rem;
   position: fixed;
   right: 0;
+
+  @media (max-width: 768px) {
+    width: 85%;
+  }
 
   header {
     display: flex;
@@ -209,6 +214,19 @@
       cursor: url("/assets/cursor/pointer.svg"), auto;
     }
   }
+
+  @media (max-width: 768px) {
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 1px solid var(--white-solid);
+    left: 13%;
+
+    svg {
+      margin: 0;
+      width: 10px;
+      height: 10px;
+    }
+  }
 }
 
 .buttons {
@@ -297,6 +315,18 @@
 
     &:hover {
       cursor: url("/assets/cursor/pointer.svg"), auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 1px solid var(--white-solid);
+
+    svg {
+      margin: 0;
+      width: 10px;
+      height: 10px;
     }
   }
 }
