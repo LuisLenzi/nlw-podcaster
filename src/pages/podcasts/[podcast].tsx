@@ -83,7 +83,7 @@ export default function Podcast({ episode }: PodcastProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: true
+    fallback: 'blocking'
   }
 }
 
