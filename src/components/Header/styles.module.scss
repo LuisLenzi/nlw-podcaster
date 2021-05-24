@@ -11,8 +11,7 @@
 
 .header {
   @media (max-width: 768px) {
-    background: transparent;
-    padding: 4rem 2rem 2rem 2rem;
+    display: none;
   }
   animation: appearFromTop 1s;
   background: var(--header-gradient);
@@ -52,10 +51,6 @@
     }
 
     .headerMessage {
-      @media (max-width: 768px) {
-        display: none;
-      }
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -72,33 +67,8 @@
   }
 
   .currentDate {
-    @media (max-width: 768px) {
-      display: none;
-    }
-
     font-size: 70%;
     font-weight: 300;
     color: var(--white-solid);
-  }
-}
-
-.mobileHeader {
-  @media (min-width: 768px) {
-    display: none;
-  }
-
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 4rem 2rem 2rem 2rem;
-
-  .mobileHeaderMessage {
-    width: 75%;
-    line-height: 3rem;
-
-    p {
-      font-size: 350%;
-    }
   }
 }

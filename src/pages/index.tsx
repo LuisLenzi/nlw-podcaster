@@ -36,6 +36,20 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   return (
     <>
       <div className={styles.homepage}>
+        <div className={styles.mobileHeader}>
+          <div className={styles.logoHeader}>
+            <Link href="/">
+              <a className={styles.logoContent}>
+                <img src="/assets/icons/logo.svg" alt="Uniscast" />
+                <h2>Uniscast</h2>
+              </a>
+            </Link>
+          </div>
+          <div className={styles.mobileHeaderMessage}>
+            <p>O melhor para você ouvir,</p>
+            <p style={{ color: 'var(--orange-solid)' }}>sempre</p>
+          </div>
+        </div>
         <section className={styles.latestEpisodes}>
           <h2>Últimos lançamentos</h2>
           <ul>
@@ -80,33 +94,50 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
             {
               allEpisodes.map(episode => {
                 return (
-                  <Link href={`/podcasts/${episode.id}`} key={episode.id}>
-                    <a>
-                      <Image
-                        width={75}
-                        height={75}
-                        src={episode.thumbnail}
-                        alt={episode.title}
-                        objectFit="cover"
-                        className={styles.image}
-                      />
-                      <div className={styles.episodeDetails}>
-                        <div>{episode.title}</div>
-                        <div className={styles.textBox}>
-                          <p>{episode.members}</p>
-                          <div className={styles.textContent}>
-                            <span>{episode.publishedAt}</span>
-                            <span className="duration">{episode.durationAsString}</span>
+                  <>
+                    <Link href={`/podcasts/${episode.id}`} key={episode.id}>
+                      <a className={styles.desktopContent}>
+                        <Image
+                          width={75}
+                          height={75}
+                          src={episode.thumbnail}
+                          alt={episode.title}
+                          objectFit="cover"
+                          className={styles.image}
+                        />
+                        <div className={styles.episodeDetails}>
+                          <div>{episode.title}</div>
+                          <div className={styles.textBox}>
+                            <p>{episode.members}</p>
+                            <div className={styles.textContent}>
+                              <span>{episode.publishedAt}</span>
+                              <span className="duration">{episode.durationAsString}</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className={styles.buttons}>
-                        <button type="button">
-                          <img src="assets/icons/play-button-icon.svg" alt="Startar episódio" />
-                        </button>
-                      </div>
-                    </a>
-                  </Link>
+                        <div className={styles.buttons}>
+                          <button type="button">
+                            <img src="assets/icons/play-button-icon.svg" alt="Startar episódio" />
+                          </button>
+                        </div>
+                      </a>
+                    </Link>
+                    <Link href={`/podcasts/${episode.id}`} key={episode.id}>
+                      <a className={styles.mobileOption}>
+                        <Image
+                          width={75}
+                          height={75}
+                          src={episode.thumbnail}
+                          alt={episode.title}
+                          objectFit="cover"
+                          className={styles.image}
+                        />
+                        <div>{episode.title}</div>
+                        <div className={styles.members}>{episode.members}</div>
+                        <div className={styles.members}>Duração de {episode.durationAsString}</div>
+                      </a>
+                    </Link>
+                  </>
                 )
               })
             }

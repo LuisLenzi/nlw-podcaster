@@ -50,7 +50,7 @@
   right: 0;
 
   @media (max-width: 768px) {
-    width: 85%;
+    display: none;
   }
 
   header {
@@ -195,6 +195,10 @@
   transition: all 0.4s ease;
   opacity: 0.9;
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   &:hover {
     transform: scale(1.1);
     opacity: 1;
@@ -212,19 +216,6 @@
 
     &:hover {
       cursor: url("/assets/cursor/pointer.svg"), auto;
-    }
-  }
-
-  @media (max-width: 768px) {
-    height: 1.5rem;
-    width: 1.5rem;
-    border: 1px solid var(--white-solid);
-    left: 13%;
-
-    svg {
-      margin: 0;
-      width: 10px;
-      height: 10px;
     }
   }
 }
@@ -279,6 +270,10 @@
   gap: 1.5rem;
   position: fixed;
   right: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .showButton {
@@ -317,16 +312,5 @@
       cursor: url("/assets/cursor/pointer.svg"), auto;
     }
   }
-
-  @media (max-width: 768px) {
-    height: 1.5rem;
-    width: 1.5rem;
-    border: 1px solid var(--white-solid);
-
-    svg {
-      margin: 0;
-      width: 10px;
-      height: 10px;
-    }
-  }
 }
+

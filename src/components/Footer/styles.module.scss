@@ -19,15 +19,15 @@
   justify-content: space-between;
   padding: 2rem 3rem;
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   .logoHeader {
     width: 100%;
     display: flex;
     align-items: center;
     gap: 2rem;
-
-    @media (max-width: 768px) {
-      gap: 0;
-    }
 
     .logoContent {
       display: flex;
@@ -38,12 +38,6 @@
       h2 {
         font-weight: 500;
       }
-
-      img {
-        @media (max-width: 768px) {
-          display: none;
-        }
-      }
     }
 
     .headerMessage {
@@ -53,10 +47,6 @@
       align-items: center;
       padding: 0 0.5rem;
       height: 1.5rem;
-
-      @media (max-width: 768px) {
-        gap: 2rem;
-      }
 
       p {
         font-weight: 300;

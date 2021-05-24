@@ -24,12 +24,6 @@ export function Header() {
         </div>
         <p className={styles.currentDate}>{currentDate}</p>
       </header>
-      <div className={styles.mobileHeader}>
-        <div className={styles.mobileHeaderMessage}>
-          <p>O melhor para você ouvir,</p>
-          <p style={{ color: 'var(--orange-solid)' }}>sempre</p>
-        </div>
-      </div>
     </>
   );
 }

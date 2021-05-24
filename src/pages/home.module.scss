@@ -23,13 +23,53 @@
   @media (max-width: 768px) {
     padding: 0 2rem 2rem 2rem;
   }
-  
 
   h2 {
     margin-top: 2.75rem;
     margin-bottom: 1rem;
     font-weight: 500;
     font-size: 135%;
+  }
+
+  .mobileHeader {
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 2rem 0rem 2rem 0rem;
+    gap: 5rem;
+
+    .logoHeader {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      .logoContent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        gap: 1rem;
+
+        h2 {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .mobileHeaderMessage {
+      width: 100%;
+      line-height: 3rem;
+
+      p {
+        font-size: 350%;
+      }
+    }
   }
 }
 
@@ -183,7 +223,7 @@
     gap: 1.5rem;
     width: 100%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1150px) {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -191,7 +231,15 @@
       padding: 0;
     }
 
-    a {
+    @media (max-width: 768px) {
+      gap: 0.25rem;
+      display: grid;
+      align-items: stretch;
+      justify-content: stretch;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .desktopContent {
       height: 11rem;
       cursor: url("/assets/cursor/pointer.svg"), auto;
       background: var(--black-solid);
@@ -205,8 +253,12 @@
       opacity: 0.65;
       text-decoration: none;
 
-      @media (max-width: 768px) {
+      @media (max-width: 1150px) {
         padding: 2rem 3rem;
+      }
+
+      @media (max-width: 768px) {
+        display: none;
       }
 
       .image {
@@ -236,7 +288,7 @@
           line-height: 1.5rem;
           font-size: 100%;
 
-          @media (max-width: 768px) {
+          @media (max-width: 1150px) {
             font-size: 85%;
             line-height: 1rem;
           }
@@ -262,7 +314,7 @@
             font-size: 0.8rem;
             line-height: 1rem;
 
-            @media (max-width: 768px) {
+            @media (max-width: 1150px) {
               max-width: 75%;
               font-size: 0.5rem;
             }
@@ -324,6 +376,39 @@
         .image {
           transform: scale(1);
         }
+      }
+    }
+
+    .mobileOption {
+      @media (min-width: 768px) {
+        display: none;
+      }
+
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: stretch;
+      background: transparent;
+      color: var(--white-solid);
+      gap: 0.75rem;
+      padding: 2rem 0;
+      margin: 0 auto;
+
+      img {
+        border-radius: 1rem;
+        height: 12rem;
+      }
+
+      div {
+        width: 75%;
+        color: var(--white-solid) !important;
+        font-size: 85%;
+      }
+
+      .members {
+        font-weight: 300;
+        font-size: 50%;
       }
     }
   }

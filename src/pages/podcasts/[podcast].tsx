@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { format, parseISO } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR'
-import { GetStaticPaths, GetStaticProps } from "next"
-import Image from "next/image"
-import api from "../../services/api"
+import ptBR from 'date-fns/locale/pt-BR';
+import { GetStaticPaths, GetStaticProps } from "next";
+import Image from "next/image";
+import api from "../../services/api";
 import { FaAngleLeft, FaAngleRight, FaMicrophone } from 'react-icons/fa';
 import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
-import styles from './podcast.module.scss'
+import styles from './podcast.module.scss';
 import { Loading } from '../../components/Loading';
 import Link from 'next/link';
 
@@ -26,7 +26,7 @@ type PodcastProps = {
 }
 
 export default function Podcast({ episode }: PodcastProps) {
-  const [showLoading, setShowLoading] = useState(true);
+  const [showLoading, setShowLoading] = useState(false);
   const [showPreviousPage, setShowPreviousPage] = useState('');
   const [showNextPage, showSetNextPage] = useState('');
 
@@ -52,7 +52,7 @@ export default function Podcast({ episode }: PodcastProps) {
             objectFit="cover"
           />
           <Link href="/">
-            <button type="button">
+            <button className={styles.rightButton} type="button">
               <FaAngleRight size={20} />
             </button>
           </Link>
@@ -70,7 +70,6 @@ export default function Podcast({ episode }: PodcastProps) {
           <Link href="/">
             <button type="button">
               <FaMicrophone size={27.5} />
-              <p>Voltar para o início</p>
             </button>
           </Link>
           <h1>Acompanhe por mais Podcasts</h1>
@@ -84,7 +83,7 @@ export default function Podcast({ episode }: PodcastProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: 'blocking'
+    fallback: true
   }
 }
 
