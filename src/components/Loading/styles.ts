@@ -29,7 +29,8 @@ export const Container = styled.div<ContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 3;
+  top: 0;
 
   .loading-container {
     width: 20rem;
