@@ -26,7 +26,7 @@ type PodcastProps = {
 }
 
 export default function Podcast({ episode }: PodcastProps) {
-  const [showLoading, setShowLoading] = useState(false);
+  const [showLoading, setShowLoading] = useState(true);
   const [showPreviousPage, setShowPreviousPage] = useState('');
   const [showNextPage, showSetNextPage] = useState('');
 

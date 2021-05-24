@@ -132,6 +132,10 @@
     font-weight: 300;
     font-size: 80%;
     text-align: left;
+
+    @media (max-width: 768px) {
+      padding-bottom: 10rem;
+    }
   }
 
   .backToHome {
