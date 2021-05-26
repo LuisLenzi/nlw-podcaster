@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,6 +8,7 @@ import ptBR from 'date-fns/locale/pt-BR'
 import api from '../services/api';
 import { Loading } from '../components/Loading';
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString';
+import { PlayerContext } from '../contexts/playerContext';
 
 type Episode = {
   id: string;
@@ -17,6 +18,7 @@ type Episode = {
   duration: number;
   durationAsString: string;
   publishedAt: string;
+  url: string;
 }
 
 type HomeProps = {
@@ -26,6 +28,7 @@ type HomeProps = {
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   const [showLoading, setShowLoading] = useState(true);
+  const { handlePlay } = useContext(PlayerContext);
 
   useEffect(() => {
     setTimeout(() => {
@@ -57,7 +60,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
               latestEpisodes.map(episode => {
                 return (
                   <Link href={`/podcasts/${episode.id}`} key={episode.id}>
-                    <a>
+                    <a onClick={() => handlePlay(episode)}>
                       <Image
                         width={100}
                         height={100}
@@ -96,7 +99,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                 return (
                   <>
                     <Link href={`/podcasts/${episode.id}`} key={episode.id}>
-                      <a className={styles.desktopContent}>
+                      <a className={styles.desktopContent} onClick={() => handlePlay(episode)}>
                         <Image
                           width={75}
                           height={75}
@@ -122,8 +125,8 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                         </div>
                       </a>
                     </Link>
-                    <Link href={`/podcasts/${episode.id}`} key={episode.id}>
-                      <a className={styles.mobileOption}>
+                    <Link href={`/podcasts/${episode.id}`}>
+                      <a className={styles.mobileOption} onClick={() => handlePlay(episode)}>
                         <Image
                           width={75}
                           height={75}

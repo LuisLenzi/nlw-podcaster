@@ -110,3 +110,96 @@
     }
   }
 }
+
+.emptyPlayer {
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  z-index: 1;
+  animation: appearFromBottom 0.35s linear;
+  background: var(--player-mobile-gradient);
+  color: var(--white-solid);
+  width: 100vw;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: fixed;
+  bottom: 0;
+  opacity: 0.5;
+
+  .progress {
+    position: absolute;
+    left: 0;
+    margin-top: -1.5rem;
+    width: 100%;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+
+    span {
+      display: inline-block;
+      text-align: center;
+      font-weight: 300;
+      font-size: 125%;
+    }
+
+    .slider {
+      flex: 1;
+
+      .emptySlider {
+        width: 100%;
+        height: 0.4rem;
+        background: var(--white-solid);
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 1rem 0;
+    height: 2rem;
+    gap: 1.5rem;
+
+    img {
+      width: 17.5px;
+      height: 17.5px;
+    }
+
+    button {
+      background: transparent;
+      font-size: 0;
+      transition: all 0.4s ease;
+      width: 2rem;
+      height: 2rem;
+
+      img {
+        cursor: url("/assets/cursor/pointer.svg"), auto;
+      }
+
+      &.playButton {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 1.5rem;
+        background: var(--pause-and-play-button-gradient);
+        transition: all 0.4s ease;
+
+        &:hover {
+          border-radius: 2rem;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.15);
+      }
+    }
+  }
+}
