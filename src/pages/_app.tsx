@@ -12,6 +12,8 @@ function MyApp({ Component, pageProps }) {
   const [currentEpisodeIndex, setCurrentEpisodeIndex] = useState(0);
   const [showPlayer, setShowPlayer] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLooping, setIsLooping] = useState(false);
+  const [isShuffling, setIsShuffling] = useState(false);
 
   function handlePlay(episode) {
     setEpisodeList([episode]);
@@ -20,12 +22,54 @@ function MyApp({ Component, pageProps }) {
     setIsPlaying(true);
   }
 
-  function handleShowAndHidePlayer() {
-    showPlayer ? setShowPlayer(false) : setShowPlayer(true);
+  function playList(list, index: number) {
+    setEpisodeList(list);
+    setCurrentEpisodeIndex(index)
+    setShowPlayer(true);
+    setIsPlaying(true);
+  }
+
+  function handleShowAndHidePlayer(state: boolean) {
+    setShowPlayer(state);
   }
 
   function handleTogglePlay() {
     setIsPlaying(!isPlaying);
+  }
+
+  function handleToggleMobilePlay() {
+    setIsPlaying(!isPlaying);
+  }
+
+  function handleToggleLoop() {
+    setIsLooping(!isLooping);
+  }
+
+  function handleToggleShuffle() {
+    setIsShuffling(!isShuffling);
+  }
+
+  function handlePlayOrPauseAudio(state: boolean) {
+    setIsPlaying(state);
+  }
+
+  const hasPrevious = currentEpisodeIndex > 0;
+  const hasNext = (currentEpisodeIndex + 1) < episodeList.length;
+
+  function playNext() {
+    if (isShuffling) {
+      const nextRandomEpisodeIndex = Math.floor(Math.random() * episodeList.length)
+      setCurrentEpisodeIndex(nextRandomEpisodeIndex);
+
+    } else if (hasNext) {
+      setCurrentEpisodeIndex(currentEpisodeIndex + 1);
+    }
+  }
+
+  function playPrevious() {
+    if (hasPrevious) {
+      setCurrentEpisodeIndex(currentEpisodeIndex - 1);
+    }
   }
 
   return (
@@ -38,9 +82,19 @@ function MyApp({ Component, pageProps }) {
         currentEpisodeIndex,
         showPlayer,
         isPlaying,
+        isLooping,
+        isShuffling,
+        hasNext,
+        hasPrevious,
         handlePlay,
         handleShowAndHidePlayer,
-        handleTogglePlay
+        handleTogglePlay,
+        handleToggleLoop,
+        handleToggleShuffle,
+        handlePlayOrPauseAudio,
+        playList,
+        playNext,
+        playPrevious
       }}>
         <div className={styles.wrapper}>
           <main>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -9,6 +9,7 @@ import { convertDurationToTimeString } from "../../utils/convertDurationToTimeSt
 import styles from './podcast.module.scss';
 import { Loading } from '../../components/Loading';
 import Link from 'next/link';
+import { PlayerContext } from '../../contexts/playerContext';
 
 type Episode = {
   id: string;

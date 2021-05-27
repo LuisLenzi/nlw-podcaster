@@ -92,6 +92,10 @@
         cursor: url("/assets/cursor/pointer.svg"), auto;
       }
 
+      &.isActive {
+        filter: invert(1) sepia(1) saturate(1) hue-rotate(360deg);
+      }
+
       &.playButton {
         width: 4rem;
         height: 4rem;
@@ -183,6 +187,10 @@
 
       img {
         cursor: url("/assets/cursor/pointer.svg"), auto;
+      }
+
+      &:disabled {
+        opacity: 0.3;
       }
 
       &.playButton {

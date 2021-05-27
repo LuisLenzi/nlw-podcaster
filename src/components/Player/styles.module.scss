@@ -183,7 +183,7 @@
   }
 }
 
-.empty {
+.empty .progress {
   opacity: 0.5;
 }
 
@@ -195,7 +195,6 @@
 
   span {
     display: inline-block;
-    width: 2rem;
     text-align: center;
     font-weight: 300;
   }
@@ -274,7 +273,8 @@
     }
 
     &:disabled {
-      &.playButton{
+      opacity: 0.3;
+      &.playButton {
         &:hover {
           border-radius: 1rem;
         }
@@ -282,6 +282,10 @@
       &:hover {
         transform: none;
       }
+    }
+
+    &.isActive {
+      filter: invert(1) sepia(1) saturate(1) hue-rotate(360deg);
     }
 
     &.playButton {

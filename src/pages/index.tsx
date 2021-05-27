@@ -28,7 +28,8 @@ type HomeProps = {
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   const [showLoading, setShowLoading] = useState(true);
-  const { handlePlay } = useContext(PlayerContext);
+  const { playList } = useContext(PlayerContext);
+  const episodeList = [...latestEpisodes, ...allEpisodes];
 
   useEffect(() => {
     setTimeout(() => {
@@ -57,10 +58,10 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
           <h2>Últimos lançamentos</h2>
           <ul>
             {
-              latestEpisodes.map(episode => {
+              latestEpisodes.map((episode, index) => {
                 return (
                   <Link href={`/podcasts/${episode.id}`} key={episode.id}>
-                    <a onClick={() => handlePlay(episode)}>
+                    <a onClick={() => playList(episodeList, index)}>
                       <Image
                         width={100}
                         height={100}
@@ -95,11 +96,11 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
           <h2>Todos os Podcasts</h2>
           <ul>
             {
-              allEpisodes.map(episode => {
+              allEpisodes.map((episode, index) => {
                 return (
                   <>
                     <Link href={`/podcasts/${episode.id}`} key={episode.id}>
-                      <a className={styles.desktopContent} onClick={() => handlePlay(episode)}>
+                      <a className={styles.desktopContent} onClick={() => playList(episodeList, index + latestEpisodes.length)}>
                         <Image
                           width={75}
                           height={75}
@@ -126,7 +127,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                       </a>
                     </Link>
                     <Link href={`/podcasts/${episode.id}`}>
-                      <a className={styles.mobileOption} onClick={() => handlePlay(episode)}>
+                      <a className={styles.mobileOption} onClick={() => playList(episodeList, index  + latestEpisodes.length)}>
                         <Image
                           width={75}
                           height={75}
