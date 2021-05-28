@@ -9,6 +9,7 @@ import api from '../services/api';
 import { Loading } from '../components/Loading';
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString';
 import { PlayerContext } from '../contexts/playerContext';
+import useWindowDimensions from '../hooks/windowDimensions';
 
 type Episode = {
   id: string;
@@ -28,8 +29,9 @@ type HomeProps = {
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   const [showLoading, setShowLoading] = useState(true);
-  const { playList } = useContext(PlayerContext);
+  const { playList, playListMobile } = useContext(PlayerContext);
   const episodeList = [...latestEpisodes, ...allEpisodes];
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     setTimeout(() => {
@@ -61,7 +63,12 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
               latestEpisodes.map((episode, index) => {
                 return (
                   <Link href={`/podcasts/${episode.id}`} key={episode.id}>
-                    <a onClick={() => playList(episodeList, index)}>
+                    <a
+                      onClick={
+                        width >= 768
+                          ? () => playList(episodeList, index)
+                          : () => playListMobile(episodeList, index)
+                      }>
                       <Image
                         width={100}
                         height={100}
@@ -100,7 +107,13 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                 return (
                   <>
                     <Link href={`/podcasts/${episode.id}`} key={episode.id}>
-                      <a className={styles.desktopContent} onClick={() => playList(episodeList, index + latestEpisodes.length)}>
+                      <a
+                        className={styles.desktopContent}
+                        onClick={
+                          width >= 768
+                            ? () => playList(episodeList, index)
+                            : () => playListMobile(episodeList, index + latestEpisodes.length)
+                        }>
                         <Image
                           width={75}
                           height={75}
@@ -127,7 +140,13 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                       </a>
                     </Link>
                     <Link href={`/podcasts/${episode.id}`}>
-                      <a className={styles.mobileOption} onClick={() => playList(episodeList, index  + latestEpisodes.length)}>
+                      <a
+                        className={styles.mobileOption}
+                        onClick={
+                          width >= 768
+                            ? () => playList(episodeList, index)
+                            : () => playListMobile(episodeList, index + latestEpisodes.length)
+                        }>
                         <Image
                           width={75}
                           height={75}
