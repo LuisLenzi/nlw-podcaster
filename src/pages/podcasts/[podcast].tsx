@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/image";
 import api from "../../services/api";
-import { FaAngleLeft, FaAngleRight, FaMicrophone } from 'react-icons/fa';
+import { FaAngleLeft, FaMicrophone } from 'react-icons/fa';
 import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
 import styles from './podcast.module.scss';
 import { Loading } from '../../components/Loading';
