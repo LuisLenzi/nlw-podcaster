@@ -111,7 +111,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                         className={styles.desktopContent}
                         onClick={
                           width >= 768
-                            ? () => playList(episodeList, index)
+                            ? () => playList(episodeList, index + latestEpisodes.length)
                             : () => playListMobile(episodeList, index + latestEpisodes.length)
                         }>
                         <Image

@@ -9,7 +9,6 @@ import { convertDurationToTimeString } from "../../utils/convertDurationToTimeSt
 import styles from './podcast.module.scss';
 import { Loading } from '../../components/Loading';
 import Link from 'next/link';
-import { PlayerContext } from '../../contexts/playerContext';
 
 type Episode = {
   id: string;
@@ -50,11 +49,6 @@ export default function Podcast({ episode }: PodcastProps) {
             src={episode.thumbnail}
             objectFit="cover"
           />
-          <Link href="/">
-            <button className={styles.rightButton} type="button">
-              <FaAngleRight size={20} />
-            </button>
-          </Link>
         </div>
         <header>
           <h1>{episode.title}</h1>
