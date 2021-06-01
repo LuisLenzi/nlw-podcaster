@@ -139,7 +139,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                         </div>
                       </a>
                     </Link>
-                    <Link href={`/podcasts/${episode.id}`}>
+                    <Link href={`/podcasts/${episode.id}`} key={episode.id}>
                       <a
                         className={styles.mobileOption}
                         onClick={
