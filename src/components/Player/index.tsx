@@ -71,7 +71,7 @@ export function Player() {
             <header>
               <div className={styles.playing}>
                 <img src="/assets/icons/headphone-icon.svg" alt="Tocando agora" />
-                <p>Tocando agora</p>
+                <p>Ouvindo agora</p>
               </div>
             </header>
             {
