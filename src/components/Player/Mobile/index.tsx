@@ -76,8 +76,8 @@ export function MobilePlayer() {
                 max={episode.duration}
                 value={progress}
                 onChange={handleSeek}
-                trackStyle={{ backgroundColor: 'var(--black-solid)' }}
-                handleStyle={{ border: '3px solid var(--black-solid)' }}
+                trackStyle={{ backgroundColor: 'var(--orange-solid)' }}
+                handleStyle={{ border: '3px solid var(--orange-solid)' }}
               />
             ) : (
               < div className={styles.slider}>
