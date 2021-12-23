@@ -97,6 +97,7 @@ export function Player() {
                       height={600}
                       src={episode.thumbnail}
                       objectFit="cover"
+                      quality={80}
                     />
                     <h3>{episode.title}</h3>
                     <p>{episode.members}</p>

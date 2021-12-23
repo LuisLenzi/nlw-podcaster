@@ -93,6 +93,7 @@ export function MobilePlayer() {
                 height={200}
                 src={episode.thumbnail}
                 objectFit="cover"
+                quality={50}
               />
             </div>
           )}
